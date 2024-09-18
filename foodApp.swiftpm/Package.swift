@@ -8,19 +8,19 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Test1",
+    name: "foodApp",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "Test1",
+            name: "foodApp",
             targets: ["AppModule"],
-            bundleIdentifier: "Me.Test1",
-            displayVersion: "1.0",
+            bundleIdentifier: "Me.foodApp",
+            displayVersion: "16.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .magicWand),
-            accentColor: .presetColor(.red),
+            appIcon: .asset("AppIcon"),
+            accentColor: .presetColor(.purple),
             supportedDeviceFamilies: [
                 .pad,
                 .phone
