@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var isNavigating = false
     var body: some View {
-        NavigationView{
+        NavigationStack{
             ZStack {
                 //World(col: "the world is a hand")
                 //Color.Gradient(colors: [.indigo, .purple]).edgesIgnoringSafeArea(.all)
@@ -24,11 +24,14 @@ struct ContentView: View {
                 }
                 .position(x: 200, y: 525)
 
-                NavigationLink(destination: RecipieView(), isActive: $isNavigating){
+                NavigationLink(value: isNavigating){
                     EmptyView()
                 }
                 inBox()
                     .position(x:195,y:200)
+            }
+            .navigationDestination(isPresented: $isNavigating){
+                RecipieView()
             }
             //.navigationTitle("Home")
         }
